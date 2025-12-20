@@ -3,28 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aayam</title>
+    <title>Aayam | Portfolio</title>
+
     <style>
+        /* General styles */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
         }
 
-        /* Top menu */
-        nav {
-            background-color: #333;
-            padding: 15px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 20px;
+        a {
             text-decoration: none;
+            color: white;
         }
 
-        /* Big intro section */
+        /* Header & Navigation (Semantic) */
+        header {
+            background-color: #333;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 15px;
+        }
+
+        /* Intro section */
         .intro {
             background-color: #4CAF50;
             color: white;
@@ -33,96 +39,144 @@
         }
 
         .intro h1 {
-            font-size: 50px;
+            font-size: 48px;
+            margin-bottom: 10px;
         }
 
-        /* About section */
+        /* Main content */
+        main {
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
         .about {
-            padding: 50px 20px;
             max-width: 800px;
-            margin: 0 auto;
+            margin: auto;
+            text-align: center;
         }
 
-        /* Skills boxes */
+        /* Skills using FLEXBOX */
         .skills {
             background-color: #f4f4f4;
-            padding: 50px 20px;
+            padding: 40px 20px;
         }
 
         .skills h2 {
             text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .skill-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .skill-box {
             background-color: white;
             padding: 30px;
-            margin: 20px;
+            width: 200px;
             text-align: center;
             border: 1px solid #ddd;
+            border-radius: 5px;
         }
 
         /* Contact section */
-        .contact {
+        footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 20px;
         }
 
-        .contact a {
-            color: white;
+        footer a {
             margin: 0 10px;
+        }
+
+        /* MEDIA QUERIES (Responsiveness) */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .intro h1 {
+                font-size: 36px;
+            }
+
+            .skill-box {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Menu at top -->
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
 
-    <!-- Big welcome section -->
-    <div class="intro">
+    <!-- Semantic Header -->
+    <header>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Intro -->
+    <section class="intro">
         <h1>Hi, I'm Aayam</h1>
         <p>Web Developer</p>
-    </div>
+    </section>
 
-    <!-- About me -->
-    <div class="about" id="about">
-        <h2>About Me</h2>
-        <p>I'm learning web development and creating my first websites!</p>
-    </div>
+    <!-- Main Content -->
+    <main>
 
-    <!-- My skills -->
-    <div class="skills" id="skills">
-        <h2>My Skills</h2>
-        
-        <div class="skill-box">
-            <h3>HTML</h3>
-            <p>Building web pages</p>
-        </div>
+        <!-- About -->
+        <section class="about" id="about">
+            <h2>About Me</h2>
+            <p>
+                I'm learning web development and building responsive websites
+                using modern HTML and CSS.
+            </p>
+        </section>
 
-        <div class="skill-box">
-            <h3>CSS</h3>
-            <p>Making things look nice</p>
-        </div>
+        <!-- Skills -->
+        <section class="skills" id="skills">
+            <h2>My Skills</h2>
 
-        <div class="skill-box">
-            <h3>JavaScript</h3>
-            <p>Adding interaction</p>
-        </div>
-    </div>
+            <div class="skill-container">
+                <div class="skill-box">
+                    <h3>HTML</h3>
+                    <p>Semantic web structure</p>
+                </div>
 
-    <!-- Contact -->
-    <div class="contact" id="contact">
+                <div class="skill-box">
+                    <h3>CSS</h3>
+                    <p>Flexbox & responsive design</p>
+                </div>
+
+                <div class="skill-box">
+                    <h3>JavaScript</h3>
+                    <p>Interactive web pages</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Semantic Footer -->
+    <footer id="contact">
         <h2>Contact Me</h2>
         <p>
             <a href="mailto:aayam2003@gmail.com">Email</a> |
             <a href="#">LinkedIn</a> |
             <a href="#">GitHub</a>
         </p>
-    </div>
+    </footer>
+
 </body>
 </html>
